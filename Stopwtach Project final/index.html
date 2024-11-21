@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./JS.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="stopwatch">
+            <div class="header">Stopwatch</div>
+            <div class="timer">
+                <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+            </div>
+            <div class="controls">
+                <button id="start">Start</button>
+                <button id="stop">Stop</button>
+                <button id="reset">Reset</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(() => {
+            let hrs = $("#hours");
+            let mins = $("#minutes");
+            let secs = $("#seconds");
+
+            let start = $("#start");
+            let stop = $("#stop");
+            let reset = $("#reset");
+
+            let stopwatch = null;
+            let totalSeconds = 0;
+
+         
+            function formatTime(value) {
+                return value < 10 ? `0${value}` : value;
+            }
+
+        
+            function updateTime() {
+                let hours = Math.floor(totalSeconds / 3600);
+                let minutes = Math.floor((totalSeconds % 3600) / 60);
+                let seconds = totalSeconds % 60;
+
+                hrs.text(formatTime(hours));
+                mins.text(formatTime(minutes));
+                secs.text(formatTime(seconds));
+            }
+
+   
+            start.click(() => {
+                    stopwatch = setInterval(() => {
+                        totalSeconds++;
+                        updateTime();
+                    }, 50);
+                });
+
+    
+            stop.click(() => {
+                clearInterval(stopwatch);
+                stopwatch = null;
+            });
+
+            reset.click(() => {
+                clearInterval(stopwatch);
+                stopwatch = null;
+                totalSeconds = 0;
+                updateTime();
+            });
+
+            updateTime();
+        });
+    </script>
+</body>
+
+</html>

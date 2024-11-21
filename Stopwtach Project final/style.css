@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+  }
+  
+
+  .container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+  }
+  
+  .header {
+    font-size: 1.5rem;
+    color: #6a11cb;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+
+  .timer{
+    font-size: 3rem;
+    color: #333;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  
+  .timer span {
+    padding: 5px 10px;
+    border-radius: 8px;
+    background: rgba(106, 17, 203, 0.1);
+  }
+  
+
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  #start {
+    background: #6a11cb;
+    color: #fff;
+  }
+  
+  #start:hover {
+    background: #4c0fa8;
+  }
+  
+  #stop {
+    background: #fc4a1a;
+    color: #fff;
+  }
+  
+  #stop:hover {
+    background: #e03d10;
+  }
+  
+  #reset {
+    background: #36d399;
+    color: #fff;
+  }
+  
+  #reset:hover {
+    background: #29a36e;
+  }
+  
